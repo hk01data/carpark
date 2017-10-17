@@ -1,5 +1,5 @@
 
-# How difficult to park a car in Hong Kong?
+# How hard is it to park a car in Hong Kong?
 
 The Hong Kong Police Force has fined car owners who commit illegal parking. It seems car owners are having difficulties on finding space to park their cars. [HK01](https://www.hk01.com/) has a in-depth report.
 
