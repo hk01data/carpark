@@ -41396,12 +41396,6 @@ var red_carpark_list ={
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ 113.9784008,22.39915355 ]
-    },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ 114.2074152,22.39063022 ]
     },
     "properties": {
