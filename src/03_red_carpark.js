@@ -41398,42 +41398,6 @@ var red_carpark_list ={
        "type": "Point",
        "coordinates":  [ 113.9784008,22.39915355 ]
     },
-    "properties": {
-    "cate":"停車場",
-    "type":"停車場 露天",
-    "name eng":"San Wah Lane Car Park (Outdoor)",
-    "name_chi":"新華里停車場(室外)",
-    "address":"新界 屯門 新華里 良田村",
-    "district":"屯門",
-    "icon":"small_red",
-    "icon_large":"large_red",
-    "paid":"",
-    "free":"",
-    "easting":815831,
-    "norting":828889
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ 113.9778274,22.399496 ]
-    },
-    "properties": {
-    "cate":"停車場",
-    "type":"停車場 露天",
-    "name eng":"San Wah Lane Car Park (Outdoor)",
-    "name_chi":"新華里停車場(室外)",
-    "address":"新界 屯門 良田村 (近輕鐵新墟站)",
-    "district":"屯門",
-    "icon":"small_red",
-    "icon_large":"large_red",
-    "paid":"",
-    "free":"",
-    "easting":815772,
-    "norting":828927
-    }
-  },
   {
     "type": "Feature",
     "geometry": {
