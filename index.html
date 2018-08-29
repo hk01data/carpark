@@ -2,16 +2,42 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112679299-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'UA-112679299-7');
+    </script>
+    <!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-112679299-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
     <meta charset='utf-8' />
-    <title>Hong Kong Carpark Map</title>
+    <title>01泊車地圖 | 車主福音！一圖睇清全港各區泊車位</title>
+    <meta name="author" content="香港01">
+    <meta name="description" content="車主福音！一圖睇清全港各區泊車位！香港開放數據落後，我地為你搜集咗全港停車場位置，除咗室內停車場，仲有露天停車場同咪錶位！">
+    <meta name="publisher" content="HK01">
+
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
-    <script src="src/vet.js?v=201808231612"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="src/custom.css?v=201808231612">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
@@ -93,20 +119,20 @@
         };
         green_lay = L.geoJSON(green_micbill_paid_list, {
             onEachFeature: onEachFeature,
-            pointToLayer: function(feature, latlng) {
+            pointToLayer: function (feature, latlng) {
                 return L.circle(latlng, green_micbill_paid_style);
             },
         }).addTo(cpmap);
         red_lay = L.geoJSON(red_carpark_list, {
             onEachFeature: onEachFeature,
-            pointToLayer: function(feature, latlng) {
+            pointToLayer: function (feature, latlng) {
                 return L.circle(latlng, red_carpark_style);
             },
         }).addTo(cpmap);
 
         blue_lay = L.geoJSON(blue_micbill_free_list, {
             onEachFeature: onEachFeature,
-            pointToLayer: function(feature, latlng) {
+            pointToLayer: function (feature, latlng) {
                 return L.circle(latlng, blue_micbill_free_style);
             },
         }).addTo(cpmap);
@@ -131,7 +157,7 @@
                 units: 'kilometers'
             };
 
-            green_micbill_paid_list.features.forEach(function(f) {
+            green_micbill_paid_list.features.forEach(function (f) {
                 Object.defineProperty(f.properties, 'distance', {
                     value: turf.distance(loca_info, f.geometry, options),
                     writable: true,
@@ -140,7 +166,7 @@
                 });
             })
 
-            red_carpark_list.features.forEach(function(f) {
+            red_carpark_list.features.forEach(function (f) {
                 Object.defineProperty(f.properties, 'distance', {
                     value: turf.distance(loca_info, f.geometry, options),
                     writable: true,
@@ -149,7 +175,7 @@
                 });
             })
 
-            blue_micbill_free_list.features.forEach(function(f) {
+            blue_micbill_free_list.features.forEach(function (f) {
                 Object.defineProperty(f.properties, 'distance', {
                     value: turf.distance(loca_info, f.geometry, options),
                     writable: true,
@@ -160,12 +186,12 @@
 
         }
 
-        cpmap.once('locationfound', function(e) {
+        cpmap.once('locationfound', function (e) {
             var glatlng = [e.latlng.lng, e.latlng.lat];
             calDistance(glatlng);
         });
 
-        cpmap.on('zoomend', function() {
+        cpmap.on('zoomend', function () {
             var currentZoom = cpmap.getZoom();
             console.log(currentZoom);
             if (currentZoom <= 12) {
@@ -232,11 +258,15 @@
                     document.getElementById("freeSpot").innerHTML = '<span class="fa-li"><i class="fas fa-check"></i></span><span>' + prop.free + '</span>';
                 }
             }
-            
+
             var issueReport_url = `https://docs.google.com/forms/d/e/1FAIpQLSdxdalhA2pe8PI1P9ihP691ktq6R_-P4qiaHsh2Ymh-atRJDw/viewform?usp=pp_url&entry.1313466161=${prop["name_chi"]}&entry.1099679553=${prop["address"]}`;
             document.getElementById("issueReport").setAttribute("href", issueReport_url);
 
             card.classList.remove("card-hidden");
+            
+            // Change URL onClick
+            var stateObj = { district: prop["district"], name_chi: prop["name_chi"] };
+            window.history.pushState(stateObj, "", `#${stateObj.district}-${stateObj.name_chi}`);
         }
 
 
