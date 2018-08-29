@@ -1,0 +1,145 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.leaflet-control-layers {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1rem;
+    padding: .25rem .8rem;
+}
+
+.leaflet-control-layers label {
+    margin-bottom: .25rem;
+}
+
+#mapid {
+    height: 100vh;
+}
+
+.card-header {
+    background-color: #f6f6f6;
+    padding: 1rem 2rem 0rem !important;
+    border: none;
+}
+
+.card--custom {
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: #f6f6f6;
+    z-index: 5010;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.33s linear;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border: none;
+    line-height: 1.8rem;
+}
+
+.card-body {
+    overflow-y: auto;
+    max-height: calc(100vh - 220px);
+    background: url(../images/hk01watermark.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 1.25rem 1rem !important;
+}
+
+.card-footer {
+    border: none !important;
+    padding: .75rem 1.25rem !important;
+}
+
+@media only screen and (max-width: 835px) {
+    .card--custom {
+        width: 100%;
+        bottom: 0;
+        max-height: 60%;
+    }
+}
+
+@media only screen and (min-width: 835px) {
+    .card--custom {
+        max-width: 350px;
+        max-height: 80%;
+        top: 130px;
+        left: 10px;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.card-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 0.33s, opacity 0.33s linear;
+}
+
+.card #branchStatus {
+    padding: 1px 10px;
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+    font-weight: 300;
+    display: inline-block;
+    color: black;
+}
+
+.card .yellow {
+    background: rgb(117, 234, 117);
+}
+
+.card .blue {
+    background: rgb(138, 190, 245);
+}
+
+.card .red {
+    background: rgb(250, 133, 112);
+}
+
+.card #branchName {
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: .8rem;
+}
+
+.card .fas {
+    margin-right: 1rem;
+}
+
+.card #branchDetail {
+    margin-left: 2rem;
+    margin-bottom: 0;
+}
+
+#opening_hours {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+#issueReport {
+    display: block;
+    margin-top: 0.75rem;
+}
